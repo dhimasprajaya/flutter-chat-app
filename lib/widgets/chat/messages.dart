@@ -31,10 +31,10 @@ class Messages extends StatelessWidget {
                 reverse: true,
                 itemCount: chatDocs.length,
                 itemBuilder: (ctx, index) => MessageBubble(
-                  chatDocs[index]['text'],
-                  chatDocs[index]['userId'] == futureSnapshot.data.uid,
-                  key: ValueKey(chatDocs[index].documentID)
-                ),
+                    chatDocs[index]['text'],
+                    chatDocs[index]['username'],
+                    chatDocs[index]['userId'] == futureSnapshot.data.uid,
+                    key: ValueKey(chatDocs[index].documentID)),
               );
             });
       },

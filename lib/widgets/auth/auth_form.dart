@@ -107,9 +107,11 @@ class _AuthFormState extends State<AuthForm> {
                   if (!widget.isLoading)
                     FlatButton(
                       textColor: Theme.of(context).primaryColor,
-                      child: Text(_isLogin
-                          ? 'Create new account'
-                          : 'I already have an account'),
+                      child: Text(
+                        _isLogin
+                            ? 'Create new account'
+                            : 'I already have an account',
+                      ),
                       onPressed: () {
                         setState(() {
                           _isLogin = !_isLogin;
