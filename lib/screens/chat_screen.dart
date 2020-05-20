@@ -16,7 +16,19 @@ class _ChatScreenState extends State<ChatScreen> {
     // Permission only for iOS
     final fbm = FirebaseMessaging();
     fbm.requestNotificationPermissions();
-    fbm.configure();
+    fbm.configure(onMessage: (msg) {
+      print(msg);
+      Scaffold.of(context).showSnackBar(SnackBar(content: Text('FCM onMessage'),));
+      return;
+    }, onLaunch: (msg) {
+      print(msg);
+      Scaffold.of(context).showSnackBar(SnackBar(content: Text('FCM onLaunch'),));
+      return;
+    }, onResume: (msg) {
+      print(msg);
+      Scaffold.of(context).showSnackBar(SnackBar(content: Text('FCM onResume'),));
+      return;
+    });
     super.initState();
   }
 
