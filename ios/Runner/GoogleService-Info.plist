@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:308224881811:ios:cf0ef1c232ddf2e8258966</string>
+	<string>1:308224881811:ios:7553cc658cd27184258966</string>
 	<key>DATABASE_URL</key>
 	<string>https://dhimas-chat-app.firebaseio.com</string>
 </dict>
