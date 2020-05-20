@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "308224881811",
+    "firebase_url": "https://dhimas-chat-app.firebaseio.com",
+    "project_id": "dhimas-chat-app",
+    "storage_bucket": "dhimas-chat-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:308224881811:android:a73fe1781f067c58258966",
+        "android_client_info": {
+          "package_name": "com.dhimasprajaya.chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "308224881811-5rfv174nclfqit2luaoc2dujck707qpr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJRt-y2SuosMZX8HZvFw19poCthfeYdnI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "308224881811-5rfv174nclfqit2luaoc2dujck707qpr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
