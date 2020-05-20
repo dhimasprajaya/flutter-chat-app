@@ -25,7 +25,7 @@ class _AuthFormState extends State<AuthForm> {
   var _userEmail = '';
   var _userName = '';
   var _userPassword = '';
-  var _isLogin = false;
+  var _isLogin = true;
 
   void _trySubmit() {
     final isValid = _formKey.currentState.validate();
