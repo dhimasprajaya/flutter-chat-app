@@ -1,16 +1,26 @@
+import 'package:chat_app/screens/auth_screen.dart';
 import 'package:flutter/material.dart';
 
 class AuthForm extends StatefulWidget {
+  AuthForm(this.submitFn);
+
+  final void Function(
+    String email,
+    String password,
+    String username,
+    bool isLogin,
+  ) submitFn;
+
   @override
   _AuthFormState createState() => _AuthFormState();
 }
 
 class _AuthFormState extends State<AuthForm> {
   final _formKey = GlobalKey<FormState>();
-  var _isLogin = false;
   var _userEmail = '';
   var _userName = '';
   var _userPassword = '';
+  var _isLogin = false;
 
   void _trySubmit() {
     final isValid = _formKey.currentState.validate();
@@ -19,11 +29,12 @@ class _AuthFormState extends State<AuthForm> {
     if (isValid) {
       _formKey.currentState.save();
 
-      print(_userEmail);
-      print(_userName);
-      print(_userPassword);
-
-      // Send auth request
+      widget.submitFn(
+        _userEmail,
+        _userPassword,
+        _userName,
+        _isLogin,
+      );
     }
   }
 
