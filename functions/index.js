@@ -1,4 +1,5 @@
 const functions = require("firebase-functions");
+const admins = require("firebase-admin");
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
@@ -7,10 +8,16 @@ const functions = require("firebase-functions");
 //  response.send("Hello from Firebase!");
 // });
 
+admins.initializeApp();
+
 exports.myFunction = functions.firestore
   .document("chat/{message}")
-  .onCreate((snap, context) => {
-    const newValue = snap.data();
-    console.log(newValue);
-    return;
+  .onCreate((snapshot, context) => {
+    return admins.messaging().sendToTopic("chat", {
+      notification: {
+        title: snapshot.data().username,
+        body: snapshot.data().text,
+        clickAction: "FLUTTER_NOTIFICATION_CLICK",
+      },
+    });
   });

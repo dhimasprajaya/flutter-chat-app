@@ -18,17 +18,24 @@ class _ChatScreenState extends State<ChatScreen> {
     fbm.requestNotificationPermissions();
     fbm.configure(onMessage: (msg) {
       print(msg);
-      Scaffold.of(context).showSnackBar(SnackBar(content: Text('FCM onMessage'),));
+      Scaffold.of(context).showSnackBar(SnackBar(
+        content: Text('FCM onMessage'),
+      ));
       return;
     }, onLaunch: (msg) {
       print(msg);
-      Scaffold.of(context).showSnackBar(SnackBar(content: Text('FCM onLaunch'),));
+      Scaffold.of(context).showSnackBar(SnackBar(
+        content: Text('FCM onLaunch'),
+      ));
       return;
     }, onResume: (msg) {
       print(msg);
-      Scaffold.of(context).showSnackBar(SnackBar(content: Text('FCM onResume'),));
+      Scaffold.of(context).showSnackBar(SnackBar(
+        content: Text('FCM onResume'),
+      ));
       return;
     });
+    fbm.subscribeToTopic('chat');
     super.initState();
   }
 
